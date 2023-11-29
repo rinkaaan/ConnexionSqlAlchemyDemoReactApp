@@ -1,2 +1,9 @@
-rm -rf src/openapi-client
-openapi -i ~/repos/ConnexionSqlAlchemyDemoApi/src/openapi.yaml -o src/openapi-client
+WORKPLACE="$HOME/workplace/ConnexionSqlAlchemyDemo"
+WORKSPACE="$WORKPLACE/ConnexionSqlAlchemyDemoReactApp"
+SCHEMA_PATH="$WORKPLACE/ConnexionSqlAlchemyDemoApi/api/openapi.yaml"
+
+(
+  cd "$WORKSPACE"
+  rm -rf openapi-client
+  npx openapi -i "$SCHEMA_PATH" -o src/openapi-client
+)
